@@ -1,0 +1,93 @@
+● What is the purpose of your application? What does it do?
+    I was inspired by the idea of journaling and making it a community thing like blogs. It allows the user to write their own blog posts and then publish them to share with other users.
+    It allows for other users to like their posts. 
+● How are you using React?
+    I used react components for a lot of the UI
+○ What components do you have?
+    I used Modal, Button, Floating Label, and Form
+● What data are you storing in MongoDB?
+    I am storing the entries that the user writes and their account information
+● What went right in the development of this project?
+    For the most part, it was a straightforward project that I had a lot of fun doing. Once I got the idea down, adding new features was easy and followed the same idea.
+● What went wrong in the development of this project?
+    Because there are so many files, I had spent a lot of time trying to debug some errors but not being able to find where the error was coming from because of the many files and updating
+    all of the files. 
+● What did you learn while developing this project?
+    I learned that I really enjoy making applications like this. I have been working in React for another class of mine, but I learned more about data management and storing with this project.
+    I also learned how to make an account system and enjoyed using databases to enhance the application and have persistent data. 
+● If you were to continue, what would you do to improve your application?
+    I want to add more features like a public and private as well as being able to customzie the look of your post. I think customization would be really cool to add and allow for individuality.
+● If you went above and beyond, how did you do so?
+    I added a like feature and made my own customized React components like my Signup modal where I used a form within a modal. 
+● If you used any borrowed code or code fragments, where did you get them from?
+    I used the DomoMaker as a skeleton for my project and got the account code from there. 
+Endpoint Documentation
+You must document each data endpoint (each one listed in your router.js). This
+documentation should be done in your written documentation after you answer the
+above questions. Describe each endpoint with the following information:
+
+● URL: /getEntries
+● Supported Methods: GET
+● Middleware: Requres login
+● Query Params: User's ID to get only their entries
+● Description: Gets the user's entries that they have written
+● Return type: JSON
+
+● URL: /login
+● Supported Methods: GET and POST
+● Middleware: Requires secure and be logged out
+● Query Params: Username and password to check against database
+● Description: GET will return the login page for the user to put their information in, POST will send in a request to login the user to their account if they have one
+● Return type: JSON
+
+● URL: /signup
+● Supported Methods: POST
+● Middleware: Requires secure and be logged out
+● Query Params: Username, password, and confirmation of password to ensure username is not taken and passwords match
+● Description: Creates an account for the user and stores said account in database
+● Return type: JSON
+
+● URL: /main
+● Supported Methods: GET and POST
+● Middleware: Requires login
+● Query Params: For post, user's input for writing an entry to create an entry in database
+● Description: Gets the main page of the user's entries and sends a post request to write an entry.
+● Return type: JSON
+
+● URL: /getFeed
+● Supported Methods: GET
+● Middleware: Requires login
+● Query Params: N/A
+● Description: Gets all entries in database including your own and other people's to display
+● Return type: JSON
+
+● URL: /feed
+● Supported Methods: GET
+● Middleware: Requires login
+● Query Params: N/A
+● Description: Gets the feed page
+● Return type: JSON
+
+
+● URL: /like:id
+● Supported Methods: POST
+● Middleware: Requires login
+● Query Params: Needs the ID of the entry that is being liked
+● Description: Sends the like back to data to update the like count
+● Return type: JSON
+
+
+● URL: /logout
+● Supported Methods: GET
+● Middleware: Requires login
+● Query Params: N/A
+● Description: Destroys the session and redirects user
+● Return type: N/A
+
+
+● URL: /
+● Supported Methods: GET
+● Middleware: Requires secure and logged out
+● Query Params: N/A
+● Description: Gets the login page which will then redirect if needed
+● Return type: JSON

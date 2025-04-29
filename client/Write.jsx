@@ -6,13 +6,14 @@ import ReactForm from './Form.jsx';
 
 function WriteButton({triggerReload}) {
   const [show, setShow] = useState(false);
+  const [reloadJournals, setReloadJournals] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button id="writeButton" variant="" onClick={handleShow}>
         Add
       </Button>
 

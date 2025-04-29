@@ -6,6 +6,7 @@ function ReactForm(props) {
   return (
     <>
     <Form
+    id="entryForm"
     onSubmit={(e) => handleEntries(e, props.triggerReload)}
     action="/main"
     method="POST"

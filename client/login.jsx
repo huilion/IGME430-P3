@@ -2,7 +2,6 @@ const helper = require('./helper.js');
 const React = require('react');
 const { createRoot } = require('react-dom/client');
 import { Form, FloatingLabel, Button, Modal } from 'react-bootstrap';
-import NavBar from './components.jsx'
 import SignupWindow from './Signup.jsx';
 
 
@@ -44,7 +43,7 @@ const LoginReact = (props) => {
                 label="Password"
                 className="mb-3"
                 >
-                    <Form.Control id="pass" type="text" placeholder="Password"/>
+                    <Form.Control id="pass" type="password" placeholder="Password"/>
                 </FloatingLabel>
             <Button type="submit">Login</Button>
             </Form>
@@ -61,7 +60,6 @@ const LoginReact = (props) => {
   
     return (
       <>
-        <NavBar />
         <div className="mainForm">
           <LoginReact />
             <p>Don't have an account?</p>
@@ -90,25 +88,5 @@ const init = () => {
     root.render(<App />);
 }
 
-// const init = () => {
-//     const loginButton = document.getElementById('loginButton');
-//     const signupButton = document.getElementById('signupButton');
-
-//     const root = createRoot(document.getElementById('content'));
-
-//     loginButton.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         root.render(<LoginWindow />);
-//         return false;
-//     });
-    
-//     signupButton.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         root.render(<SignupWindow />);
-//         return false;
-//     });
-
-//     root.render(<LoginWindow />);
-// }
 
 window.onload = init;

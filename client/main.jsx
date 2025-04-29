@@ -2,9 +2,7 @@ const helper = require('./helper.js');
 const React = require('react');
 const { useState, useEffect } = React;
 const { createRoot } = require('react-dom/client');
-import NavBar from './components.jsx';
 import WriteButton from './Write.jsx';
-import Feed from './Feed.jsx';
 
 const EntryList = (props) => {
     const [entries, setEntries] = useState(props.entries);
@@ -14,7 +12,6 @@ const EntryList = (props) => {
             const response = await fetch('/getEntries');
             const data = await response.json();
             setEntries(data.entries);
-            console.log(data.entries);
         };
         loadEntriesFromServer();
     }, [props.reloadEntries]);
@@ -23,7 +20,7 @@ const EntryList = (props) => {
     if (entries.length === 0 ) {
         return (
             <div className="entryList">
-                <h3 className="emptyEntry">No Domos Yet!</h3>
+                <h3 className="emptyEntry">Write something to share!</h3>
             </div>
         );
     }
@@ -32,9 +29,9 @@ const EntryList = (props) => {
     const entryNodes = entries.map(entry => {
         return (
             <div key={entry._id} className="entryNode">
-                <h3 className="entryTitle">Title: {entry.title}</h3>
-                <h3 className="entryText">Name: {entry.entry}</h3>
-                <h3 className="entryDate">Date: {entry.date}</h3>
+                <h3 className="entryTitle">{entry.title}</h3>
+                <h3 className="entryText">{entry.entry}</h3>
+                <h3 className="entryDate">Date: {new Date(entry.date).toLocaleDateString()}</h3>
             </div>
         )
     });   
@@ -51,16 +48,9 @@ const App = () => {
 
     return (
         <div>
-            <NavBar />
-            <div id="makeEntry">
-            </div>
-            <div id="domos">
+
+                <WriteButton triggerReload={()=>setReloadJournals(!reloadJournals)}/>
                 <EntryList entries={[]} reloadEntries={reloadJournals} />
-            </div>
-            <div>
-                <Feed />
-            </div>
-            <WriteButton triggerReload={()=>setReloadJournals(!reloadJournals)}/>
         </div>
     )
 }

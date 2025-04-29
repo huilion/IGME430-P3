@@ -1,13 +1,43 @@
-/* html, body {
+ html, body {
     height: 100%;
+    background-color: #F4F2F3 !important;
     width: 100%;
+    font-family: Verdana;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-}  */
+}  
 
-.stick
-{
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .navlink {
+    margin-left: 1.5rem;
+  }
+  
+  .navlink a {
+    text-decoration: none;
+    color: #565656;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navlink a:hover {
+    background-color: #438c56;
+    color: #ffffff;
+  }
+  
+
+.stick{
  text-align:center;
  position: sticky;
  top:0px;
@@ -19,14 +49,6 @@
  font-weight: bold;
  z-index:9999;
  width:100vw;
-}
-.nav-link, .navbar-brand{
-  color:white;
-  margin: 0.5em;
-}
-
-.nav-icon {
-  padding: 7px;
 }
 
 .stick>h1{
@@ -58,10 +80,18 @@
 .mainForm button {
   margin-top: 1rem;
   margin: auto;
-  width: 75%;
+  width: 100%;
+  background-color: #1f4c2b;
   padding: 0.75rem;
   font-size: 1rem;
   border-radius: 0.5rem;
+  color: #ffff;
+  border-color: #1f4c2b;
+}
+
+.mainForm .formSubmit, .mainForm button:hover {
+  background-color: #438c56;
+
 }
 
 /* Modal body centering */
@@ -73,7 +103,7 @@
 }
 
 /* Signup form in modal */
-.signup-form {
+.signup-form { 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,6 +112,177 @@
   max-width: 400px;
 }
 
+#writeButton {
+  display: block;
+  margin: 1rem auto;
+  background-color: #1f4c2b;
+  color: white;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(15, 45, 18, 0.2);
+}
+
+#writeButton:hover {
+  background-color: #438c56;
+  transform: translateY(-2px);
+}
+
+#writeButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(15, 45, 18, 0.2);
+}
+
+
+.entryList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.entryNode {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  margin: auto;
+  width: 60%;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.entryNode:hover {
+  transform: scale(1.01);
+}
+
+.entryTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.entryText {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.entryDate {
+  font-size: 0.85rem;
+  color: #999;
+  text-align: right;
+}
+
+#entryForm {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 1.25rem;
+}
+
+#entryForm .form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#entryForm .form-control:focus {
+  border-color: #1f4c2b;
+  box-shadow: 0 0 0 0.2rem #1b1c1d(0, 0, 0, 0.25);
+}
+
+#entryForm button[type="submit"] {
+  background-color: #1f4c2b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+#entryForm button[type="submit"]:hover {
+  background-color: #438c56;
+}
+
+
+.feed-entry {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    max-width: 600px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .feed-entry:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feed-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: #333333;
+  }
+  
+  .feed-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: #555555;
+  }
+  
+  .feed-date {
+    font-size: 0.875rem;
+    color: #888888;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feed-owner {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666666;
+  }
+
+  .likes-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .likes-section i{
+    padding-left: 0.25em;
+  }
+
+
+  .feed-entry button {
+    background: none;
+    border: none;
+    color: #333333;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  
 
 #user, #pass, #pass2 {
     text-align: center;
@@ -90,10 +291,6 @@
     border-radius: 6px;
 }
 
-#user:focus, #pass:focus, #pass2:focus {
-    outline: none;
-    box-shadow: 0px 0px 1px 1px #55acee;
-}
 
 .hidden {
     display: none;
@@ -101,90 +298,9 @@
 
 #errorMessage {
     font-size: 1.2em;
+    margin-top: 2em;
+    text-align:center;
     font-weight: bold;
-    color: red;
+    color: #4a4a4a;
     font-style: italic;
-}
-
-#domo {
-    z-index: 225;
-    margin-top: -20px;
-    margin-left: 135px;
-    height: 450px;
-    width: 300px;
-    -ms-transform: rotate(330deg);
-    -webkit-transform: rotate(330deg); 
-    transform: rotate(330deg);
-}
-
-#domos {
-    width: 40%;
-    min-width: 400px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-top: 100px;
-}
-
-.domo {
-    width: 95%;
-    margin: 0 auto;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
-    background-color: #55acee;
-    padding: 10px;
-    min-height:60px;
-    overflow: hidden;
-}
-
-.domo:hover {
-    transition: border-color 0.2s ease-out;
-    border-color: rgba(255,255,255, 0.8);
-    transition: background-color 2.6s ease-out;
-    background-color: #66bfff;
-}
-
-img.domoFace {
-    margin-left: 25px;
-    margin-right: 10px;
-    height: 50px;
-    width: 50px;
-    border-radius: 4px;
-    margin-top:10px;
-    float:left;
-}
-
-h3.emptyDomo {
-    width: 400px;
-    font-size: 1.5em;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 18px;
-}
-
-h3.domoName {
-    float:left;
-    width: 200px;
-    font-weight: bold;
-    padding-left: 65px;
-    font-size: 1.5em;
-}
-
-h3.domoAge {
-    float:right;
-    text-align: left;
-    width: 100px;
-    font-weight: bold;
-    padding-right: 40px;
-    font-size: 1.5em;
-}
-
-.domo:first-child {
-    margin-top: 10px;
-}
-
-.domo:last-child {
-    margin-bottom:10px;
 }

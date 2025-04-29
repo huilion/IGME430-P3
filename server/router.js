@@ -12,7 +12,10 @@ const router = (app) => {
   app.get('/main', mid.requiresLogin, controllers.Entry.mainPage)
   app.post('/main', mid.requiresLogin, controllers.Entry.writeEntry);
 
-  app.get('/feed', mid.requiresLogin, controllers.Entry.getFeedEntries);
+  app.get('/getFeed', mid.requiresLogin, controllers.Entry.getFeedEntries);
+  app.get('/feed', mid.requiresLogin, controllers.Entry.feedPage);
+
+  app.post('/like/:id', mid.requiresLogin, controllers.Entry.likeEntry);
 
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
 

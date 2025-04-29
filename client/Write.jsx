@@ -4,9 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ReactForm from './Form.jsx';
 
-function WriteButton({triggerReload}) {
+// When clicking the write button, open the modal form
+const WriteButton = ({triggerReload}) => {
   const [show, setShow] = useState(false);
-  const [reloadJournals, setReloadJournals] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -14,7 +14,7 @@ function WriteButton({triggerReload}) {
   return (
     <>
       <Button id="writeButton" variant="" onClick={handleShow}>
-        Add
+        Publish an entry
       </Button>
 
       <Modal show={show} onHide={handleClose}>

@@ -2,6 +2,7 @@ import React from 'react';
 const helper = require('./helper.js');
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
 
+// Send the post request for making a new account
 const handleSignup = (e) => {
     e.preventDefault();
     helper.hideError();
@@ -25,6 +26,7 @@ const handleSignup = (e) => {
     return false;
 }
 
+// Signup window, this is within the modal
 const SignupWindow = () => {
     return (
       <Form

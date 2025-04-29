@@ -4,6 +4,7 @@ const { useState, useEffect } = React;
 const { createRoot } = require('react-dom/client');
 import WriteButton from './Write.jsx';
 
+// Get all entries that the user has written
 const EntryList = (props) => {
     const [entries, setEntries] = useState(props.entries);
 
@@ -25,7 +26,6 @@ const EntryList = (props) => {
         );
     }
 
-    console.log(entries);
     const entryNodes = entries.map(entry => {
         return (
             <div key={entry._id} className="entryNode">

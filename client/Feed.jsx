@@ -48,6 +48,7 @@ const Feed = () => {
     );
   }
 
+  // The display of feeds
   return (
     <div className="feed">
       {entries

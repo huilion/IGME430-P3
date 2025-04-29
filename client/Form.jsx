@@ -2,7 +2,8 @@ import React from 'react';
 const helper = require('./helper.js');
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
 
-function ReactForm(props) {
+// Using react to make a form for writing an entry
+const ReactForm = (props) => {
   return (
     <>
     <Form
@@ -35,6 +36,7 @@ function ReactForm(props) {
   );
 }
 
+// Handle entries when they are submitted
 const handleEntries = (e, onEntryAdded) => {
     e.preventDefault();
     helper.hideError();

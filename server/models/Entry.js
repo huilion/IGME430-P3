@@ -3,6 +3,7 @@ const _ = require('underscore');
 
 const setEntry = (entry) => _.escape(entry).trim();
 
+// Skeleton for all the data that goes into an entry
 const EntrySchema = new mongoose.Schema({
   title: {
     type: String,

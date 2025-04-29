@@ -2,13 +2,16 @@ const models = require('../models'); // Import all models
 
 const { Account } = models;
 
+// Render login handlebars
 const loginPage = (req, res) => res.render('login'); // Render the login page
 
+// Handling logging out
 const logout = (req, res) => {
   req.session.destroy();
   return res.redirect('/');
 };
 
+// Handling logging in
 const login = (req, res) => {
   const username = `${req.body.username}`;
   const pass = `${req.body.pass}`;
@@ -28,13 +31,14 @@ const login = (req, res) => {
   });
 };
 
+// Handling signing up for an account
 const signup = async (req, res) => {
   const username = `${req.body.username}`;
   const pass = `${req.body.pass}`;
   const pass2 = `${req.body.pass2}`;
 
   if (!username || !pass || !pass2) {
-    return res.status(400).json({ error: 'All field are required' });
+    return res.status(400).json({ error: 'All fields are required' });
   }
 
   if (pass !== pass2) {

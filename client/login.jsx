@@ -4,7 +4,7 @@ const { createRoot } = require('react-dom/client');
 import { Form, FloatingLabel, Button, Modal } from 'react-bootstrap';
 import SignupWindow from './Signup.jsx';
 
-
+// When login is pressed, do this to ensure they satisfy all requiremnets and send the post request
 const handleLogin = (e) => {
     e.preventDefault();
     helper.hideError();

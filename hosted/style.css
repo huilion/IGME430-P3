@@ -304,3 +304,8 @@ nav {
     color: #4a4a4a;
     font-style: italic;
 }
+
+#notFound {
+  text-align: center;
+  padding: 2rem;
+}

@@ -12,6 +12,11 @@ const feedPage = async (req, res) => {
     res.render('feed');
 }
 
+// render the not found
+const notFoundPage = async (req, res) => {
+  res.render('notFound');
+}
+
 // Write an entry and make it into an object with the schema
 const writeEntry = async(req, res) => {
     if(!req.body.title || !req.body.entry || !req.body.date) {
@@ -100,6 +105,7 @@ const likeEntry = async (req, res) => {
 module.exports = {
     mainPage,
     feedPage,
+    notFoundPage,
     writeEntry,
     likeEntry,
     getEntries,

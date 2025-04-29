@@ -9,7 +9,7 @@ const router = (app) => {
 
   app.post('/signup', mid.requiresSecure, mid.requiresLogout, controllers.Account.signup);
 
-  app.get('/main', mid.requiresLogin, controllers.Entry.mainPage)
+  app.get('/main', mid.requiresLogin, controllers.Entry.mainPage);
   app.post('/main', mid.requiresLogin, controllers.Entry.writeEntry);
 
   app.get('/getFeed', mid.requiresLogin, controllers.Entry.getFeedEntries);

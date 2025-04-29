@@ -31,7 +31,7 @@ const EntrySchema = new mongoose.Schema({
   likedBy: [{
     type: mongoose.Schema.ObjectId,
     ref: 'Account',
-  }]
+  }],
 });
 
 EntrySchema.statics.toAPI = (doc) => ({
@@ -40,7 +40,7 @@ EntrySchema.statics.toAPI = (doc) => ({
   date: doc.date,
   owner: doc.owner,
   likes: doc.likes,
-  likedBy: doc.likedBy
+  likedBy: doc.likedBy,
 });
 
 const EntryModel = mongoose.model('Entry', EntrySchema);
